@@ -1,0 +1,17 @@
+{
+  "@@locale" : "en",
+  "title": "DecisionOS",
+  "welcome": "Welcome to DecisionOS",
+  "loginWithDeviceId": "Login with device ID",
+  "deviceId": "Device UUID:",
+  "loading": "Loading...",
+  "error": "Error:",
+  "loggingIn": "Logging in...",
+  "username": "Username",
+  "pleaseEnterUsername": "Please enter your username",
+  "password": "Password",
+  "pleaseEnterPassword": "Please enter your password",
+  "dashboard": "Dashboard",
+  "logout": "Logout",
+  "getUserAgain": "Get User Again"
+}

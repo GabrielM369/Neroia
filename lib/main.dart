@@ -1,122 +1,107 @@
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:neroia_app/core/config/environment_config.dart';
+import 'package:neroia_app/core/data_sources/firebase/firebase.dart';
+import 'package:neroia_app/core/localizations/translations_extension.dart';
+import 'package:neroia_app/features/tracking/consent.dart';
+import 'package:neroia_app/presentation/pages/error_page.dart';
+import 'package:neroia_app/presentation/pages/splash_screen.dart';
+import 'package:posthog_flutter/posthog_flutter.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'core/data_sources/reporting/logger.dart';
+import 'core/router/app_router.dart';
+import 'core/theme/theme.dart';
+import 'features/auth/data/auth_repository.dart';
+import 'features/tracking/tracking.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await initFirebase();
+
+  await SentryFlutter.init((options) {
+    options.dsn = sentryDsn;
+
+    // TODO Ask Gabriel for judgement call on data privacy of this
+    options.sendDefaultPii = false;
+    // We recommend adjusting this value in production.
+    options.tracesSampleRate = 1.0;
+    options.experimental.replay.sessionSampleRate = 1.0;
+    options.experimental.replay.onErrorSampleRate = 1.0;
+    options.debug = false;
+  }, appRunner: () => runNeroia());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+void runNeroia() => runApp(SentryWidget(child: ProviderScope(child: const Initialization())));
 
-  // This widget is the root of your application.
+final initialisationProvider = FutureProvider((ref) async {
+  AppLogger.setMinimumLogLevel(ref.read(envProvider).logLevel);
+  await ref.read(trackingProvider.notifier).init();
+  return ref.read(authRepository).signIn();
+});
+
+class Initialization extends ConsumerWidget {
+  const Initialization({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(initialisationProvider);
+    ref.read(trackingProvider.notifier).trackScreen();
+
+    return PostHogWidget(
+      child: state.when(
+        data: (_) => Neroia(),
+        loading: () => SplashScreen(),
+        error: (error, stack) => ErrorPage(error: error.toString(), onRetry: () => ref.refresh(initialisationProvider)),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
+class Neroia extends ConsumerStatefulWidget {
+  const Neroia({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  ConsumerState createState() => _NeroiaState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+class _NeroiaState extends ConsumerState<Neroia> {
+  @override
+  void initState() {
+    super.initState();
+    ref.read(consentProvider.notifier).askForConsentIfNeeded();
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
-    return Scaffold(
-      appBar: AppBar(
-        // TRY THIS: Try changing the color here to a specific color (to
-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
-        // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+    final router = ref.watch(routerProvider);
+
+    return PostHogWidget(
+      child: MaterialApp.router(
+        onGenerateTitle: (context) => context.i18n.auth.title,
+        theme: ref.read(lightThemeProvider),
+        darkTheme: ref.read(darkThemeProvider),
+        debugShowCheckedModeBanner: false,
+        routerConfig: router,
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          ...localizationsDelegates,
+        ],
+        supportedLocales: supportedLocales,
+        localeResolutionCallback: (locale, supportedLocales) {
+          if (locale == null) return defaultLocale;
+
+          return supportedLocales.firstWhereOrNull(
+                (supportedLocale) => supportedLocale.languageCode == locale.languageCode,
+              ) ??
+              defaultLocale;
+        },
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

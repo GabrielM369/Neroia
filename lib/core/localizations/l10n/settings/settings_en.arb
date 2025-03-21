@@ -1,0 +1,26 @@
+{
+  "@@locale" : "en",
+  "german": "German",
+  "english": "English",
+  "version": "Version: {value}",
+  "@version": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "account": "Account",
+  "personal": "Personal",
+  "accountUpgrade": "Account Upgrade",
+  "addEmail": "Add Email",
+  "language": "Language",
+  "appearance": "Appearance",
+  "light": "light",
+  "consent": "Consent",
+  "enabled": "Enabled",
+  "privacyAndSecurity": "Privacy & Security",
+  "notifications": "Notifications",
+  "feedback": "Feedback",
+  "logoutAndReset": "Logout & Reset"
+}

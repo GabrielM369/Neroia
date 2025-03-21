@@ -1,0 +1,9 @@
+{
+  "@@locale" : "de",
+  "newSuggestions": "Neue Vorschläge",
+  "model": "Modell",
+  "gpt4o": "GPT-4o",
+  "claude": "Claude",
+  "claude35": "Claude 3.5",
+  "claude37": "Claude 3.7"
+}

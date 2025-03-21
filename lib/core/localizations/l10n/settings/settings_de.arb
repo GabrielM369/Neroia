@@ -1,0 +1,26 @@
+{
+  "@@locale" : "de",
+  "german": "Deutsch",
+  "english": "Englisch",
+  "version": "Version: {value}",
+  "@version": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "account": "Account",
+  "personal": "Persönlich",
+  "accountUpgrade": "Account hochstufen",
+  "addEmail": "E-Mail hinzufügen",
+  "language": "Sprache",
+  "appearance": "Erscheinungsbild",
+  "light": "hell",
+  "consent": "Einwilligung",
+  "enabled": "Aktiviert",
+  "privacyAndSecurity": "Datenschutz & Sicherheit",
+  "notifications": "Benachrichtigungen",
+  "feedback": "Feedback",
+  "logoutAndReset": "Abmelden & Zurücksetzen"
+}

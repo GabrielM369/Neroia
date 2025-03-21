@@ -1,0 +1,9 @@
+{
+  "@@locale" : "de",
+  "title": "Diese Version wird nicht mehr unterstützt!",
+  "description": "Leider können wir deine App Version nicht mehr unterstützen. Bitte aktualisiere die App, um fortzufahren.",
+  "update": "Aktualisieren",
+  "optionalUpdateTitle": "Neue Version verfügbar!",
+  "optionalUpdateMessage": "Eine neue Version der App ist verfügbar. Möchtest du jetzt aktualisieren?",
+  "later": "Später"
+}

@@ -1,0 +1,119 @@
+{
+  "@@locale": "en",
+  "endTitle": "End",
+  "endSubtitle": "What's next?",
+  "endCopy": "Here you can check off your process and review your results.",
+  "endButton": "Overview",
+  "active": "Active",
+  "openToDos": "Open ToDo's",
+  "completed": "Completed",
+  "created": "Created on {date}",
+  "@created": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "author": "Author: {id}",
+  "@author": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "noProcessFound": "No process found",
+  "noNeedQuestion": "No decision question",
+  "needQuestion": "Decision Question",
+  "goals": "Goals",
+  "limitations": "General Conditions",
+  "options": "Options for action",
+  "rating": "Rating",
+  "resistance": "Resistance",
+  "fits": "fits",
+  "notApplicable": "N.A.",
+  "useInPoints": "{value} Benefit",
+  "@useInPoints": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "acceptanceInPercent": "{value}% Acceptance",
+  "@acceptanceInPercent": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "step": "Step {step}",
+  "@step": {
+    "placeholders": {
+      "step": {
+        "type": "int"
+      }
+    }
+  },
+  "ratingResult": "Rating Result",
+  "use": "Benefit",
+  "ratingResultExplanation": "Alternatives in descending order of total benefit in the goals [in %].",
+  "singularRating": "Singular Rating",
+  "fulfillment": "Fulfillment",
+  "rateYourSuggestions": "Rate your suggestions!",
+  "ratingLimitationExplanation": "Rate the alternatives individually regarding the fulfillment of the general conditions.",
+  "ratingGoalExplanation": "Rate the alternatives individually from -5 to +5 according to the goal fulfillment.",
+  "yourRatings": "Your Ratings",
+  "defineDesiredEffect": "Define the desired effect!",
+  "whatDoIWantToAchieve": "What do I want to achieve?",
+  "myGoals": "My Goals",
+  "addGoal": "Add Goal",
+  "homePageTitle": "Home Page",
+  "defineYourFrame": "Define your frame!",
+  "whatAreTheConditions": "What are the general conditions?",
+  "myLimitations": "My General Conditions",
+  "addLimitation": "Add General Condition",
+  "whatDoYouWantToDecide": "What do you want to decide?",
+  "exampleQuestion": "Example Question",
+  "findSuggestions": "Find suitable suggestions!",
+  "whatAreYourOptions": "What are the alternatives?",
+  "myOptions": "My Options for Action",
+  "addOption": "Add Option for Action",
+  "createProcess": "Create Process",
+  "processTitle": "Create a new process",
+  "minimumBenefit": "Minimum Benefit",
+  "benefitRating": "BenefitRating",
+  "benefitRatingBold": "Benefit",
+  "makeYourChoice": "Make your decision",
+  "resistanceMeasurement": "Resistance Measurement",
+  "resistanceMeasurementBold": "Resistance",
+  "resistanceMeasurementExplanation": "Rate the action options individually from 0-10 according to your resistance to them.",
+  "yourRating": "Your Rating",
+  "belowTheThreshold": "Below the threshold",
+  "decisionResult": "Decision Result",
+  "acceptance": "Acceptance Decision",
+  "acceptanceBold": "Acceptance",
+  "resistanceResultExplanation": "Alternatives in descending order of your measured acceptance [in %].",
+  "editRating": "Edit Rating",
+  "finishProcess": "Finish Process",
+  "chooseAGoalForThisOption": "Choose a goal for this option to pay into:",
+  "noGoalsFound": "No goals found",
+  "processListTitle": "Processes",
+  "emptyProcessList": "No processes available",
+  "addProcess": "Add Process",
+  "resultGroup": "Result Group",
+  "abstract": "Abstraction",
+  "moreGeneral": "More General",
+  "inputLevel": "Input Level",
+  "moreSpecific": "More Specific",
+  "focus": "Focus",
+  "suggestions": "Suggestions",
+  "decisionOn": "Decision on",
+  "exitConfirmation": "Discard Changes?",
+  "exitConfirmationMessage": "You have unsaved changes. Are you sure you want to go back?",
+  "exit": "Discard Changes",
+  "keep": "Keep",
+  "suggestGoals": "Ziele vorschlagen"
+}

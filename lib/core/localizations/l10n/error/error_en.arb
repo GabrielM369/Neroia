@@ -1,0 +1,22 @@
+{
+  "@@locale" : "en",
+  "somethingWentWrong": "Ups, something went wrong!",
+  "fieldNotEmpty": "This field must not be empty",
+  "fieldMaxLengthError": "This field must not contain more than {value} characters",
+  "@fieldMaxLengthError": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "defaultErrorTitle": "An Error occurred Error",
+  "defaultErrorDescription": "Unfortunately this did not work and an error occurred. Please try again later.",
+  "retry": "Try again",
+  "serverError": "Server Error",
+  "cacheError": "Cache Error",
+  "unknownError": "Unknown Error",
+  "ratingCalculationError": "Rating calculation failed",
+  "processCreationError": "An error occurred while creating the process!",
+  "versionError": "An error occurred while loading the version!"
+}

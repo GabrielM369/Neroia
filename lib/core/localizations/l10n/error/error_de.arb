@@ -1,0 +1,22 @@
+{
+  "@@locale" : "de",
+  "somethingWentWrong": "Ups, da ist etwas schiefgelaufen!",
+  "fieldNotEmpty": "Dieses Feld darf nicht leer sein",
+  "fieldMaxLengthError": "Dieses Feld darf nicht mehr als {value} Zeichen enthalten",
+  "@fieldMaxLengthError": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "defaultErrorTitle": "Es ist ein Fehler aufgetreten",
+  "defaultErrorDescription": "Leider hat das nicht funktioniert und es ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+  "retry": "Erneut versuchen",
+  "serverError": "Serverfehler",
+  "cacheError": "Cache-Fehler",
+  "unknownError": "Unbekannter Fehler",
+  "ratingCalculationError": "Berechnung der Bewertung fehlgeschlagen",
+  "processCreationError": "Beim erstellen des Prozesses ist ein Fehler aufgetreten!",
+  "versionError": "Beim laden der Version ist ein Fehler aufgetreten!"
+}
