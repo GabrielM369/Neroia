@@ -16,6 +16,12 @@
   "serverError": "Serverfehler",
   "cacheError": "Cache-Fehler",
   "unknownError": "Unbekannter Fehler",
+  "invalidEmail": "Die E-Mail-Adresse ist ungültig",
+  "userDisabled":  "Dein Konto ist gesperrt. Bitte kontaktiere den Support.",
+  "userNotFound": "Wir konnte dein Konto nicht finden. Bist du vielleicht neu hier?",
+  "wrongPassword": "Das Passwort ist falsch",
+  "tooManyRequests": "Wir sind gerade leider zu beliebt. Gib uns ein paar Sekunden und versuche es dann erneut.",
+  "emailAlreadyInUse": "Diese E-Mail-Adresse ist bereits in Verwendung. Bitte verwende eine andere oder melde dich an.",
   "ratingCalculationError": "Berechnung der Bewertung fehlgeschlagen",
   "processCreationError": "Beim erstellen des Prozesses ist ein Fehler aufgetreten!",
   "versionError": "Beim laden der Version ist ein Fehler aufgetreten!"

@@ -1,17 +1,13 @@
 {
   "@@locale" : "de",
-  "title": "DecisionOS",
-  "welcome": "Wilkommen bei DecisionOS",
-  "loginWithDeviceId": "Login mit device ID",
-  "deviceId": "Device UUID:",
-  "loading": "Lädt...",
-  "error": "Fehler:",
-  "loggingIn": "Logging in...",
-  "username": "Username",
-  "pleaseEnterUsername": "Bitte gib deinen Usernamen ein",
-  "password": "Password",
-  "pleaseEnterPassword": "Bitte gib dein Passwort ein",
-  "dashboard": "Dashboard",
-  "logout": "Logout",
-  "getUserAgain": "User neu laden"
+  "title": "Neroia",
+  "signInEmail": "Melde dich mit deiner Firmen E-Mail an",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "confirmPassword": "Passwort bestätigen",
+  "login": "Anmelden",
+  "alreadyHaveAnAccount": "Hast du bereits ein Konto?",
+  "signUp": "Registrieren",
+  "newHere": "Neu hier?",
+  "confirmEmail": "Bitte bestätige deine E-Mail!"
 }

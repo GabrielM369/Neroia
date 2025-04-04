@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'auth_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7,44 +9,32 @@ class AuthLocalizationsEn extends AuthLocalizations {
   AuthLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get title => 'DecisionOS';
+  String get title => 'Neroia';
 
   @override
-  String get welcome => 'Welcome to DecisionOS';
+  String get signInEmail => 'Please sign in with your company email';
 
   @override
-  String get loginWithDeviceId => 'Login with device ID';
-
-  @override
-  String get deviceId => 'Device UUID:';
-
-  @override
-  String get loading => 'Loading...';
-
-  @override
-  String get error => 'Error:';
-
-  @override
-  String get loggingIn => 'Logging in...';
-
-  @override
-  String get username => 'Username';
-
-  @override
-  String get pleaseEnterUsername => 'Please enter your username';
+  String get email => 'Email';
 
   @override
   String get password => 'Password';
 
   @override
-  String get pleaseEnterPassword => 'Please enter your password';
+  String get confirmPassword => 'Confirm password';
 
   @override
-  String get dashboard => 'Dashboard';
+  String get login => 'Login';
 
   @override
-  String get logout => 'Logout';
+  String get alreadyHaveAnAccount => 'Already have an account?';
 
   @override
-  String get getUserAgain => 'Get User Again';
+  String get signUp => 'Sign up';
+
+  @override
+  String get newHere => 'New here?';
+
+  @override
+  String get confirmEmail => 'Please confirm your email!';
 }

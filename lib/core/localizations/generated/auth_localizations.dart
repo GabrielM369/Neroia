@@ -98,86 +98,62 @@ abstract class AuthLocalizations {
   /// No description provided for @title.
   ///
   /// In de, this message translates to:
-  /// **'DecisionOS'**
+  /// **'Neroia'**
   String get title;
 
-  /// No description provided for @welcome.
+  /// No description provided for @signInEmail.
   ///
   /// In de, this message translates to:
-  /// **'Wilkommen bei DecisionOS'**
-  String get welcome;
+  /// **'Melde dich mit deiner Firmen E-Mail an'**
+  String get signInEmail;
 
-  /// No description provided for @loginWithDeviceId.
+  /// No description provided for @email.
   ///
   /// In de, this message translates to:
-  /// **'Login mit device ID'**
-  String get loginWithDeviceId;
-
-  /// No description provided for @deviceId.
-  ///
-  /// In de, this message translates to:
-  /// **'Device UUID:'**
-  String get deviceId;
-
-  /// No description provided for @loading.
-  ///
-  /// In de, this message translates to:
-  /// **'Lädt...'**
-  String get loading;
-
-  /// No description provided for @error.
-  ///
-  /// In de, this message translates to:
-  /// **'Fehler:'**
-  String get error;
-
-  /// No description provided for @loggingIn.
-  ///
-  /// In de, this message translates to:
-  /// **'Logging in...'**
-  String get loggingIn;
-
-  /// No description provided for @username.
-  ///
-  /// In de, this message translates to:
-  /// **'Username'**
-  String get username;
-
-  /// No description provided for @pleaseEnterUsername.
-  ///
-  /// In de, this message translates to:
-  /// **'Bitte gib deinen Usernamen ein'**
-  String get pleaseEnterUsername;
+  /// **'E-Mail'**
+  String get email;
 
   /// No description provided for @password.
   ///
   /// In de, this message translates to:
-  /// **'Password'**
+  /// **'Passwort'**
   String get password;
 
-  /// No description provided for @pleaseEnterPassword.
+  /// No description provided for @confirmPassword.
   ///
   /// In de, this message translates to:
-  /// **'Bitte gib dein Passwort ein'**
-  String get pleaseEnterPassword;
+  /// **'Passwort bestätigen'**
+  String get confirmPassword;
 
-  /// No description provided for @dashboard.
+  /// No description provided for @login.
   ///
   /// In de, this message translates to:
-  /// **'Dashboard'**
-  String get dashboard;
+  /// **'Anmelden'**
+  String get login;
 
-  /// No description provided for @logout.
+  /// No description provided for @alreadyHaveAnAccount.
   ///
   /// In de, this message translates to:
-  /// **'Logout'**
-  String get logout;
+  /// **'Hast du bereits ein Konto?'**
+  String get alreadyHaveAnAccount;
 
-  /// No description provided for @getUserAgain.
+  /// No description provided for @signUp.
   ///
   /// In de, this message translates to:
-  /// **'User neu laden'**
-  String get getUserAgain;
+  /// **'Registrieren'**
+  String get signUp;
+
+  /// No description provided for @newHere.
+  ///
+  /// In de, this message translates to:
+  /// **'Neu hier?'**
+  String get newHere;
+
+  /// No description provided for @confirmEmail.
+  ///
+  /// In de, this message translates to:
+  /// **'Bitte bestätige deine E-Mail!'**
+  String get confirmEmail;
 }
 
 class _AuthLocalizationsDelegate extends LocalizationsDelegate<AuthLocalizations> {

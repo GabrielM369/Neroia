@@ -149,6 +149,42 @@ abstract class ErrorLocalizations {
   /// **'Unbekannter Fehler'**
   String get unknownError;
 
+  /// No description provided for @invalidEmail.
+  ///
+  /// In de, this message translates to:
+  /// **'Die E-Mail-Adresse ist ungültig'**
+  String get invalidEmail;
+
+  /// No description provided for @userDisabled.
+  ///
+  /// In de, this message translates to:
+  /// **'Dein Konto ist gesperrt. Bitte kontaktiere den Support.'**
+  String get userDisabled;
+
+  /// No description provided for @userNotFound.
+  ///
+  /// In de, this message translates to:
+  /// **'Wir konnte dein Konto nicht finden. Bist du vielleicht neu hier?'**
+  String get userNotFound;
+
+  /// No description provided for @wrongPassword.
+  ///
+  /// In de, this message translates to:
+  /// **'Das Passwort ist falsch'**
+  String get wrongPassword;
+
+  /// No description provided for @tooManyRequests.
+  ///
+  /// In de, this message translates to:
+  /// **'Wir sind gerade leider zu beliebt. Gib uns ein paar Sekunden und versuche es dann erneut.'**
+  String get tooManyRequests;
+
+  /// No description provided for @emailAlreadyInUse.
+  ///
+  /// In de, this message translates to:
+  /// **'Diese E-Mail-Adresse ist bereits in Verwendung. Bitte verwende eine andere oder melde dich an.'**
+  String get emailAlreadyInUse;
+
   /// No description provided for @ratingCalculationError.
   ///
   /// In de, this message translates to:

@@ -1,3 +1,5 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'error_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -34,6 +36,24 @@ class ErrorLocalizationsDe extends ErrorLocalizations {
 
   @override
   String get unknownError => 'Unbekannter Fehler';
+
+  @override
+  String get invalidEmail => 'Die E-Mail-Adresse ist ungültig';
+
+  @override
+  String get userDisabled => 'Dein Konto ist gesperrt. Bitte kontaktiere den Support.';
+
+  @override
+  String get userNotFound => 'Wir konnte dein Konto nicht finden. Bist du vielleicht neu hier?';
+
+  @override
+  String get wrongPassword => 'Das Passwort ist falsch';
+
+  @override
+  String get tooManyRequests => 'Wir sind gerade leider zu beliebt. Gib uns ein paar Sekunden und versuche es dann erneut.';
+
+  @override
+  String get emailAlreadyInUse => 'Diese E-Mail-Adresse ist bereits in Verwendung. Bitte verwende eine andere oder melde dich an.';
 
   @override
   String get ratingCalculationError => 'Berechnung der Bewertung fehlgeschlagen';

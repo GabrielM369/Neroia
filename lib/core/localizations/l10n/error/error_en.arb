@@ -16,7 +16,14 @@
   "serverError": "Server Error",
   "cacheError": "Cache Error",
   "unknownError": "Unknown Error",
+  "invalidEmail": "Email address invalid",
+  "userDisabled":  "Your account is disabled. Please contact support.",
+  "userNotFound": "We could not find your account. Are you new here?",
+  "wrongPassword": "The password is incorrect",
+  "tooManyRequests": "We are currently too popular. Give us a few seconds and try again.",
+  "emailAlreadyInUse": "This email address is already in use. Please use another one or log in.",
   "ratingCalculationError": "Rating calculation failed",
   "processCreationError": "An error occurred while creating the process!",
   "versionError": "An error occurred while loading the version!"
+
 }
