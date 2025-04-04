@@ -1,24 +1,23 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/core/config/environment_config.dart';
 import 'package:neroia_app/core/data_sources/firebase/firebase.dart';
 import 'package:neroia_app/core/localizations/translations_extension.dart';
 import 'package:neroia_app/features/tracking/consent.dart';
-import 'package:neroia_app/presentation/pages/error_page.dart';
-import 'package:neroia_app/presentation/pages/splash_screen.dart';
 import 'package:posthog_flutter/posthog_flutter.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
 import 'core/data_sources/reporting/logger.dart';
 import 'core/router/app_router.dart';
 import 'core/theme/theme.dart';
-import 'features/auth/data/auth_repository.dart';
 import 'features/tracking/tracking.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   await initFirebase();
 
@@ -35,31 +34,12 @@ void main() async {
   }, appRunner: () => runNeroia());
 }
 
-void runNeroia() => runApp(SentryWidget(child: ProviderScope(child: const Initialization())));
+void runNeroia() => runApp(SentryWidget(child: ProviderScope(child: const Neroia())));
 
 final initialisationProvider = FutureProvider((ref) async {
   AppLogger.setMinimumLogLevel(ref.read(envProvider).logLevel);
   await ref.read(trackingProvider.notifier).init();
-  return ref.read(authRepository).signIn();
 });
-
-class Initialization extends ConsumerWidget {
-  const Initialization({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(initialisationProvider);
-    ref.read(trackingProvider.notifier).trackScreen();
-
-    return PostHogWidget(
-      child: state.when(
-        data: (_) => Neroia(),
-        loading: () => SplashScreen(),
-        error: (error, stack) => ErrorPage(error: error.toString(), onRetry: () => ref.refresh(initialisationProvider)),
-      ),
-    );
-  }
-}
 
 class Neroia extends ConsumerStatefulWidget {
   const Neroia({super.key});
@@ -72,6 +52,7 @@ class _NeroiaState extends ConsumerState<Neroia> {
   @override
   void initState() {
     super.initState();
+
     ref.read(consentProvider.notifier).askForConsentIfNeeded();
   }
 
