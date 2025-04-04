@@ -6,6 +6,9 @@ class EventsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(body: Center(child: Text('Events Page')));
+    return Scaffold(
+      backgroundColor: Colors.blue, // ref.colors.background,
+      body: Container(child: Center(child: Text('Events Page', style: TextStyle(fontSize: 24, color: Colors.white)))),
+    );
   }
 }
