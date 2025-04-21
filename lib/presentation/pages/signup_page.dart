@@ -51,10 +51,12 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       children: [
                         Text(context.i18n.auth.signInEmail, style: ref.textStyle.title),
                         NeroiaTextInputField(
+                          initialValue: email,
                           label: context.i18n.auth.email,
                           onChanged: (value) => setState(() => email = value),
                         ),
                         NeroiaTextInputField(
+                          initialValue: password,
                           label: context.i18n.auth.password,
                           obscureText: true,
                           onChanged: (value) => setState(() => password = value),
