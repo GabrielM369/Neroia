@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TextStylesTheme {
 
- TextStyle get headline; TextStyle get subHeadline; TextStyle get title; TextStyle get subtitle; TextStyle get cardTitle; TextStyle get cardDescription; TextStyle get textField; TextStyle get emoji; TextStyle get buttonText; TextStyle get hint; TextStyle get small; TextStyle get snackbar;
+ TextStyle get headline; TextStyle get subHeadline; TextStyle get title; TextStyle get subtitle; TextStyle get cardText; TextStyle get cardDescription; TextStyle get textField; TextStyle get emoji; TextStyle get buttonText; TextStyle get hint; TextStyle get small; TextStyle get snackbar;
 /// Create a copy of TextStylesTheme
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -26,16 +26,16 @@ $TextStylesThemeCopyWith<TextStylesTheme> get copyWith => _$TextStylesThemeCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is TextStylesTheme&&(identical(other.headline, headline) || other.headline == headline)&&(identical(other.subHeadline, subHeadline) || other.subHeadline == subHeadline)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&(identical(other.cardTitle, cardTitle) || other.cardTitle == cardTitle)&&(identical(other.cardDescription, cardDescription) || other.cardDescription == cardDescription)&&(identical(other.textField, textField) || other.textField == textField)&&(identical(other.emoji, emoji) || other.emoji == emoji)&&(identical(other.buttonText, buttonText) || other.buttonText == buttonText)&&(identical(other.hint, hint) || other.hint == hint)&&(identical(other.small, small) || other.small == small)&&(identical(other.snackbar, snackbar) || other.snackbar == snackbar));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TextStylesTheme&&(identical(other.headline, headline) || other.headline == headline)&&(identical(other.subHeadline, subHeadline) || other.subHeadline == subHeadline)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&(identical(other.cardText, cardText) || other.cardText == cardText)&&(identical(other.cardDescription, cardDescription) || other.cardDescription == cardDescription)&&(identical(other.textField, textField) || other.textField == textField)&&(identical(other.emoji, emoji) || other.emoji == emoji)&&(identical(other.buttonText, buttonText) || other.buttonText == buttonText)&&(identical(other.hint, hint) || other.hint == hint)&&(identical(other.small, small) || other.small == small)&&(identical(other.snackbar, snackbar) || other.snackbar == snackbar));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,headline,subHeadline,title,subtitle,cardTitle,cardDescription,textField,emoji,buttonText,hint,small,snackbar);
+int get hashCode => Object.hash(runtimeType,headline,subHeadline,title,subtitle,cardText,cardDescription,textField,emoji,buttonText,hint,small,snackbar);
 
 @override
 String toString() {
-  return 'TextStylesTheme(headline: $headline, subHeadline: $subHeadline, title: $title, subtitle: $subtitle, cardTitle: $cardTitle, cardDescription: $cardDescription, textField: $textField, emoji: $emoji, buttonText: $buttonText, hint: $hint, small: $small, snackbar: $snackbar)';
+  return 'TextStylesTheme(headline: $headline, subHeadline: $subHeadline, title: $title, subtitle: $subtitle, cardText: $cardText, cardDescription: $cardDescription, textField: $textField, emoji: $emoji, buttonText: $buttonText, hint: $hint, small: $small, snackbar: $snackbar)';
 }
 
 
@@ -46,7 +46,7 @@ abstract mixin class $TextStylesThemeCopyWith<$Res>  {
   factory $TextStylesThemeCopyWith(TextStylesTheme value, $Res Function(TextStylesTheme) _then) = _$TextStylesThemeCopyWithImpl;
 @useResult
 $Res call({
- TextStyle headline, TextStyle subHeadline, TextStyle title, TextStyle subtitle, TextStyle cardTitle, TextStyle cardDescription, TextStyle textField, TextStyle emoji, TextStyle buttonText, TextStyle hint, TextStyle small, TextStyle snackbar
+ TextStyle headline, TextStyle subHeadline, TextStyle title, TextStyle subtitle, TextStyle cardText, TextStyle cardDescription, TextStyle textField, TextStyle emoji, TextStyle buttonText, TextStyle hint, TextStyle small, TextStyle snackbar
 });
 
 
@@ -63,13 +63,13 @@ class _$TextStylesThemeCopyWithImpl<$Res>
 
 /// Create a copy of TextStylesTheme
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? headline = null,Object? subHeadline = null,Object? title = null,Object? subtitle = null,Object? cardTitle = null,Object? cardDescription = null,Object? textField = null,Object? emoji = null,Object? buttonText = null,Object? hint = null,Object? small = null,Object? snackbar = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? headline = null,Object? subHeadline = null,Object? title = null,Object? subtitle = null,Object? cardText = null,Object? cardDescription = null,Object? textField = null,Object? emoji = null,Object? buttonText = null,Object? hint = null,Object? small = null,Object? snackbar = null,}) {
   return _then(_self.copyWith(
 headline: null == headline ? _self.headline : headline // ignore: cast_nullable_to_non_nullable
 as TextStyle,subHeadline: null == subHeadline ? _self.subHeadline : subHeadline // ignore: cast_nullable_to_non_nullable
 as TextStyle,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as TextStyle,subtitle: null == subtitle ? _self.subtitle : subtitle // ignore: cast_nullable_to_non_nullable
-as TextStyle,cardTitle: null == cardTitle ? _self.cardTitle : cardTitle // ignore: cast_nullable_to_non_nullable
+as TextStyle,cardText: null == cardText ? _self.cardText : cardText // ignore: cast_nullable_to_non_nullable
 as TextStyle,cardDescription: null == cardDescription ? _self.cardDescription : cardDescription // ignore: cast_nullable_to_non_nullable
 as TextStyle,textField: null == textField ? _self.textField : textField // ignore: cast_nullable_to_non_nullable
 as TextStyle,emoji: null == emoji ? _self.emoji : emoji // ignore: cast_nullable_to_non_nullable
@@ -88,14 +88,14 @@ as TextStyle,
 
 
 class _TextStylesTheme implements TextStylesTheme {
-  const _TextStylesTheme({required this.headline, required this.subHeadline, required this.title, required this.subtitle, required this.cardTitle, required this.cardDescription, required this.textField, required this.emoji, required this.buttonText, required this.hint, required this.small, required this.snackbar});
+  const _TextStylesTheme({required this.headline, required this.subHeadline, required this.title, required this.subtitle, required this.cardText, required this.cardDescription, required this.textField, required this.emoji, required this.buttonText, required this.hint, required this.small, required this.snackbar});
   
 
 @override final  TextStyle headline;
 @override final  TextStyle subHeadline;
 @override final  TextStyle title;
 @override final  TextStyle subtitle;
-@override final  TextStyle cardTitle;
+@override final  TextStyle cardText;
 @override final  TextStyle cardDescription;
 @override final  TextStyle textField;
 @override final  TextStyle emoji;
@@ -114,16 +114,16 @@ _$TextStylesThemeCopyWith<_TextStylesTheme> get copyWith => __$TextStylesThemeCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TextStylesTheme&&(identical(other.headline, headline) || other.headline == headline)&&(identical(other.subHeadline, subHeadline) || other.subHeadline == subHeadline)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&(identical(other.cardTitle, cardTitle) || other.cardTitle == cardTitle)&&(identical(other.cardDescription, cardDescription) || other.cardDescription == cardDescription)&&(identical(other.textField, textField) || other.textField == textField)&&(identical(other.emoji, emoji) || other.emoji == emoji)&&(identical(other.buttonText, buttonText) || other.buttonText == buttonText)&&(identical(other.hint, hint) || other.hint == hint)&&(identical(other.small, small) || other.small == small)&&(identical(other.snackbar, snackbar) || other.snackbar == snackbar));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TextStylesTheme&&(identical(other.headline, headline) || other.headline == headline)&&(identical(other.subHeadline, subHeadline) || other.subHeadline == subHeadline)&&(identical(other.title, title) || other.title == title)&&(identical(other.subtitle, subtitle) || other.subtitle == subtitle)&&(identical(other.cardText, cardText) || other.cardText == cardText)&&(identical(other.cardDescription, cardDescription) || other.cardDescription == cardDescription)&&(identical(other.textField, textField) || other.textField == textField)&&(identical(other.emoji, emoji) || other.emoji == emoji)&&(identical(other.buttonText, buttonText) || other.buttonText == buttonText)&&(identical(other.hint, hint) || other.hint == hint)&&(identical(other.small, small) || other.small == small)&&(identical(other.snackbar, snackbar) || other.snackbar == snackbar));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,headline,subHeadline,title,subtitle,cardTitle,cardDescription,textField,emoji,buttonText,hint,small,snackbar);
+int get hashCode => Object.hash(runtimeType,headline,subHeadline,title,subtitle,cardText,cardDescription,textField,emoji,buttonText,hint,small,snackbar);
 
 @override
 String toString() {
-  return 'TextStylesTheme(headline: $headline, subHeadline: $subHeadline, title: $title, subtitle: $subtitle, cardTitle: $cardTitle, cardDescription: $cardDescription, textField: $textField, emoji: $emoji, buttonText: $buttonText, hint: $hint, small: $small, snackbar: $snackbar)';
+  return 'TextStylesTheme(headline: $headline, subHeadline: $subHeadline, title: $title, subtitle: $subtitle, cardText: $cardText, cardDescription: $cardDescription, textField: $textField, emoji: $emoji, buttonText: $buttonText, hint: $hint, small: $small, snackbar: $snackbar)';
 }
 
 
@@ -134,7 +134,7 @@ abstract mixin class _$TextStylesThemeCopyWith<$Res> implements $TextStylesTheme
   factory _$TextStylesThemeCopyWith(_TextStylesTheme value, $Res Function(_TextStylesTheme) _then) = __$TextStylesThemeCopyWithImpl;
 @override @useResult
 $Res call({
- TextStyle headline, TextStyle subHeadline, TextStyle title, TextStyle subtitle, TextStyle cardTitle, TextStyle cardDescription, TextStyle textField, TextStyle emoji, TextStyle buttonText, TextStyle hint, TextStyle small, TextStyle snackbar
+ TextStyle headline, TextStyle subHeadline, TextStyle title, TextStyle subtitle, TextStyle cardText, TextStyle cardDescription, TextStyle textField, TextStyle emoji, TextStyle buttonText, TextStyle hint, TextStyle small, TextStyle snackbar
 });
 
 
@@ -151,13 +151,13 @@ class __$TextStylesThemeCopyWithImpl<$Res>
 
 /// Create a copy of TextStylesTheme
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? headline = null,Object? subHeadline = null,Object? title = null,Object? subtitle = null,Object? cardTitle = null,Object? cardDescription = null,Object? textField = null,Object? emoji = null,Object? buttonText = null,Object? hint = null,Object? small = null,Object? snackbar = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? headline = null,Object? subHeadline = null,Object? title = null,Object? subtitle = null,Object? cardText = null,Object? cardDescription = null,Object? textField = null,Object? emoji = null,Object? buttonText = null,Object? hint = null,Object? small = null,Object? snackbar = null,}) {
   return _then(_TextStylesTheme(
 headline: null == headline ? _self.headline : headline // ignore: cast_nullable_to_non_nullable
 as TextStyle,subHeadline: null == subHeadline ? _self.subHeadline : subHeadline // ignore: cast_nullable_to_non_nullable
 as TextStyle,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as TextStyle,subtitle: null == subtitle ? _self.subtitle : subtitle // ignore: cast_nullable_to_non_nullable
-as TextStyle,cardTitle: null == cardTitle ? _self.cardTitle : cardTitle // ignore: cast_nullable_to_non_nullable
+as TextStyle,cardText: null == cardText ? _self.cardText : cardText // ignore: cast_nullable_to_non_nullable
 as TextStyle,cardDescription: null == cardDescription ? _self.cardDescription : cardDescription // ignore: cast_nullable_to_non_nullable
 as TextStyle,textField: null == textField ? _self.textField : textField // ignore: cast_nullable_to_non_nullable
 as TextStyle,emoji: null == emoji ? _self.emoji : emoji // ignore: cast_nullable_to_non_nullable
