@@ -154,6 +154,12 @@ abstract class AuthLocalizations {
   /// In de, this message translates to:
   /// **'Bitte bestätige deine E-Mail!'**
   String get confirmEmail;
+
+  /// No description provided for @logout.
+  ///
+  /// In de, this message translates to:
+  /// **'Abmelden'**
+  String get logout;
 }
 
 class _AuthLocalizationsDelegate extends LocalizationsDelegate<AuthLocalizations> {

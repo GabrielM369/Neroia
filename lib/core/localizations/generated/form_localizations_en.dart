@@ -22,4 +22,7 @@ class FormLocalizationsEn extends FormLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String get back => 'Back';
 }

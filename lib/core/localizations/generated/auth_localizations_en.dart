@@ -37,4 +37,7 @@ class AuthLocalizationsEn extends AuthLocalizations {
 
   @override
   String get confirmEmail => 'Please confirm your email!';
+
+  @override
+  String get logout => 'Logout';
 }

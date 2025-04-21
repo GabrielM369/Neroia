@@ -9,5 +9,6 @@
   "alreadyHaveAnAccount": "Hast du bereits ein Konto?",
   "signUp": "Registrieren",
   "newHere": "Neu hier?",
-  "confirmEmail": "Bitte bestätige deine E-Mail!"
+  "confirmEmail": "Bitte bestätige deine E-Mail!",
+  "logout": "Abmelden"
 }

@@ -124,6 +124,12 @@ abstract class FormLocalizations {
   /// In de, this message translates to:
   /// **'Wiederholen'**
   String get retry;
+
+  /// No description provided for @back.
+  ///
+  /// In de, this message translates to:
+  /// **'Zurück'**
+  String get back;
 }
 
 class _FormLocalizationsDelegate extends LocalizationsDelegate<FormLocalizations> {

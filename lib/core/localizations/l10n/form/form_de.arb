@@ -4,5 +4,6 @@
   "done": "Fertig",
   "next": "Weiter",
   "delete": "Löschen",
-  "retry": "Wiederholen"
+  "retry": "Wiederholen",
+  "back": "Zurück"
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:neroia_app/core/localizations/generated/ai_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/auth_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/error_localizations.dart';
+import 'package:neroia_app/core/localizations/generated/event_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/force_update_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/form_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/process_localizations.dart';
@@ -23,6 +24,7 @@ class I18n {
   ProcessLocalizations get process => ProcessLocalizations.of(context)!;
   FormLocalizations get form => FormLocalizations.of(context)!;
   AiLocalizations get ai => AiLocalizations.of(context)!;
+  EventLocalizations get event => EventLocalizations.of(context)!;
 }
 
 const defaultLocale = Locale('en');
@@ -36,6 +38,7 @@ const localizationsDelegates = [
   ProcessLocalizations.delegate,
   FormLocalizations.delegate,
   AiLocalizations.delegate,
+  EventLocalizations.delegate,
 ];
 
 extension LocaleTranslation on Locale {
