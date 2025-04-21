@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCH37-M710GSGNqAzNeX0iSGs84Tm95bQQ',
-    appId: '1:632593159692:android:5902390ac2d9cfa1140029',
-    messagingSenderId: '632593159692',
-    projectId: 'neroia',
-    storageBucket: 'neroia.firebasestorage.app',
+    apiKey: 'AIzaSyDDwnwkCqjOz1qAIIYv4PCPUztu2kH7zZw',
+    appId: '1:721984393574:android:2aa9cbc0776ecfeb7938a7',
+    messagingSenderId: '721984393574',
+    projectId: 'neroia-gmbh',
+    storageBucket: 'neroia-gmbh.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAAE0oUJ7nK5cJxdk0HZIzjbUvKOCxRGN8',
-    appId: '1:632593159692:ios:1c3591fb80136dca140029',
-    messagingSenderId: '632593159692',
-    projectId: 'neroia',
-    storageBucket: 'neroia.firebasestorage.app',
+    apiKey: 'AIzaSyAcooYDLFxS5htvDoxt9zR41l6jafx_jOM',
+    appId: '1:721984393574:ios:3f5bb1aa66aa7c257938a7',
+    messagingSenderId: '721984393574',
+    projectId: 'neroia-gmbh',
+    storageBucket: 'neroia-gmbh.firebasestorage.app',
     iosBundleId: 'com.neroia.neroiaApp',
   );
 }

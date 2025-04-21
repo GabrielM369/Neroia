@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "632593159692",
-    "project_id": "neroia",
-    "storage_bucket": "neroia.firebasestorage.app"
+    "project_number": "721984393574",
+    "project_id": "neroia-gmbh",
+    "storage_bucket": "neroia-gmbh.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:632593159692:android:5902390ac2d9cfa1140029",
+        "mobilesdk_app_id": "1:721984393574:android:2aa9cbc0776ecfeb7938a7",
         "android_client_info": {
           "package_name": "com.neroia.neroia_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCH37-M710GSGNqAzNeX0iSGs84Tm95bQQ"
+          "current_key": "AIzaSyDDwnwkCqjOz1qAIIYv4PCPUztu2kH7zZw"
         }
       ],
       "services": {
