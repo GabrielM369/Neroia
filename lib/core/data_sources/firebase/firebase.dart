@@ -12,6 +12,7 @@ Future<void> initFirebase() async {
 
 abstract class FirebaseCollections {
   static const String users = 'users';
+  static const String events = 'events';
 }
 
-final firestore = Provider((ref) => FirebaseFirestore.instanceFor(app: ref.read(firebaseApp)));
+final firestore = Provider((ref) => FirebaseFirestore.instanceFor(app: ref.read(firebaseApp), databaseId: 'neroia-db'));
