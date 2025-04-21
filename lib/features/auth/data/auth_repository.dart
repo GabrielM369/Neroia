@@ -17,6 +17,8 @@ class AuthRepository {
 
   AuthRepository({required Ref ref}) : _ref = ref {
     ref.onDispose(() => _userSubscription.cancel());
+    _user.add(_auth.currentUser?.toNeroiaUser());
+
     _userSubscription = _auth.userChanges().listen((user) => _user.add(user?.toNeroiaUser()));
   }
 
