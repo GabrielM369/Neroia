@@ -17,4 +17,6 @@ class Auth extends _$Auth {
 
   Future<void> signUp({required String email, required String password}) async =>
       await ref.read(authRepository).signUp(email: email, password: password);
+
+  Future<void> logout() async => await ref.read(authRepository).signOut();
 }
