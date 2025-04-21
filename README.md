@@ -91,3 +91,13 @@ Before setting up the Neroia app, ensure you have the following installed:
 - Git
 
 You can verify your Flutter installation by running:
+
+### Deploy Firebase Functions
+
+```bash
+firebase deploy --only functions --project neroia-gmbh
+firebase functions:config:set \
+  ticketmasterKey="TICKETMASTER_API_KEY" \
+  ticketmasterUrl="TICKETMASTER_API_URL" \
+  --project neroia-gmbh
+```
