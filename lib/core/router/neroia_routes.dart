@@ -6,6 +6,7 @@ import 'package:neroia_app/presentation/pages/error_page.dart';
 import 'package:neroia_app/presentation/pages/events_page.dart';
 import 'package:neroia_app/presentation/pages/liked_events_page.dart';
 import 'package:neroia_app/presentation/pages/login_page.dart';
+import 'package:neroia_app/presentation/pages/profile_page.dart';
 import 'package:neroia_app/presentation/pages/signup_page.dart';
 import 'package:neroia_app/presentation/pages/splash_screen.dart';
 import 'package:neroia_app/presentation/pages/your_events_page.dart';
@@ -153,4 +154,14 @@ class LikedEventsRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: LikedEventsPage());
+}
+
+@TypedGoRoute<ProfileRoute>(name: ProfileRoute.name, path: '/profile')
+class ProfileRoute extends GoRouteData {
+  const ProfileRoute();
+
+  static const String name = 'Profile Page';
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: ProfilePage());
 }

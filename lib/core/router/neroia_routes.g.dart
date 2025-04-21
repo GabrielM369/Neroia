@@ -13,6 +13,7 @@ List<RouteBase> get $appRoutes => [
   $logInRoute,
   $signUpRoute,
   $myShellRouteData,
+  $profileRoute,
 ];
 
 RouteBase get $splashRoute => GoRouteData.$route(
@@ -231,6 +232,28 @@ extension $LikedEventsRouteExtension on LikedEventsRoute {
   static LikedEventsRoute _fromState(GoRouterState state) => LikedEventsRoute();
 
   String get location => GoRouteData.$location('/liked-events');
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $profileRoute => GoRouteData.$route(
+  path: '/profile',
+  name: 'Profile Page',
+
+  factory: $ProfileRouteExtension._fromState,
+);
+
+extension $ProfileRouteExtension on ProfileRoute {
+  static ProfileRoute _fromState(GoRouterState state) => const ProfileRoute();
+
+  String get location => GoRouteData.$location('/profile');
 
   void go(BuildContext context) => context.go(location);
 
