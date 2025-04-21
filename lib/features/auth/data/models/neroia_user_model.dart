@@ -6,6 +6,6 @@ extension NeroiaUserModel on User? {
     final user = this;
 
     if (user == null) return null;
-    return NeroiaUser(id: user.uid, email: user.email!, name: user.displayName!, photoUrl: user.photoURL);
+    return NeroiaUser(id: user.uid, email: user.email!, name: user.displayName ?? '', photoUrl: user.photoURL);
   }
 }
