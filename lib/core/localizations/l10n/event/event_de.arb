@@ -1,0 +1,44 @@
+{
+  "@@locale" : "de",
+  "startsInMinutes": "Startet in {time} Minuten",
+  "@startsInMinutes": {
+    "placeholders": {
+      "time": {
+        "type": "int"
+      }
+    }
+  },
+  "startsInHours": "Startet in {time} Stunden",
+  "@startsInHours": {
+    "placeholders": {
+      "time": {
+        "type": "int"
+      }
+    }
+  },
+  "startsInDays": "Startet in {time} Tagen",
+  "@startsInDays": {
+    "placeholders": {
+      "time": {
+        "type": "int"
+      }
+    }
+  },
+  "startsInWeeks": "Startet in {time} Wochen",
+  "@startsInWeeks": {
+    "placeholders": {
+      "time": {
+        "type": "int"
+      }
+    }
+  },
+  "startsInMonths": "Startet in {time} Monaten",
+  "@startsInMonths": {
+    "placeholders": {
+      "time": {
+        "type": "int"
+      }
+    }
+  },
+  "startsInNow": "Startet jetzt"
+}
