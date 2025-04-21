@@ -61,6 +61,8 @@ abstract class EnvironmentConfig with _$EnvironmentConfig {
 final String sentryDsn = _Env.sentryDsn;
 final String postHogKey = _Env.postHogKey;
 final String userCentricsId = _Env.userCentricsId;
+final String firebaseApiKeyIos = _Env.firebaseApiKeyIos;
+final String firebaseApiKeyAndroid = _Env.firebaseApiKeyAndroid;
 
 @Envied(name: 'Envied')
 abstract class _Env {
@@ -72,6 +74,12 @@ abstract class _Env {
 
   @EnviedField(varName: 'POSTHOG_KEY', obfuscate: true)
   static String postHogKey = _Envied.postHogKey;
+
+  @EnviedField(varName: 'FIREBASE_API_KEY_IOS', obfuscate: true)
+  static String firebaseApiKeyIos = _Envied.firebaseApiKeyIos;
+
+  @EnviedField(varName: 'FIREBASE_API_KEY_ANDROID', obfuscate: true)
+  static String firebaseApiKeyAndroid = _Envied.firebaseApiKeyAndroid;
 
   // DEV
   @EnviedField(varName: 'DEV_LOG_LEVEL', obfuscate: true)
