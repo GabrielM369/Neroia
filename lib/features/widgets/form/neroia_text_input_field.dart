@@ -4,6 +4,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:neroia_app/core/theme/colors.dart';
 
 class NeroiaTextInputField extends ConsumerWidget {
+  final String? initialValue;
   final String? hint;
   final String? label;
   final String? helper;
@@ -16,6 +17,7 @@ class NeroiaTextInputField extends ConsumerWidget {
 
   const NeroiaTextInputField({
     super.key,
+    this.initialValue,
     this.hint,
     this.label,
     this.helper,
@@ -30,6 +32,7 @@ class NeroiaTextInputField extends ConsumerWidget {
     final iconColor = ref.colors.text;
 
     return TextFormField(
+      initialValue: initialValue,
       obscureText: obscureText,
       onChanged: onChanged,
       decoration: InputDecoration(
