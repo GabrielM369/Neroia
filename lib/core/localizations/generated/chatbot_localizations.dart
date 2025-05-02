@@ -5,24 +5,24 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'event_localizations_de.dart';
-import 'event_localizations_en.dart';
+import 'chatbot_localizations_de.dart';
+import 'chatbot_localizations_en.dart';
 
 // ignore_for_file: type=lint
 
-/// Callers can lookup localized strings with an instance of EventLocalizations
-/// returned by `EventLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of ChatbotLocalizations
+/// returned by `ChatbotLocalizations.of(context)`.
 ///
-/// Applications need to include `EventLocalizations.delegate()` in their app's
+/// Applications need to include `ChatbotLocalizations.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'generated/event_localizations.dart';
+/// import 'generated/chatbot_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: EventLocalizations.localizationsDelegates,
-///   supportedLocales: EventLocalizations.supportedLocales,
+///   localizationsDelegates: ChatbotLocalizations.localizationsDelegates,
+///   supportedLocales: ChatbotLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -59,18 +59,18 @@ import 'event_localizations_en.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the EventLocalizations.supportedLocales
+/// be consistent with the languages listed in the ChatbotLocalizations.supportedLocales
 /// property.
-abstract class EventLocalizations {
-  EventLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class ChatbotLocalizations {
+  ChatbotLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static EventLocalizations? of(BuildContext context) {
-    return Localizations.of<EventLocalizations>(context, EventLocalizations);
+  static ChatbotLocalizations? of(BuildContext context) {
+    return Localizations.of<ChatbotLocalizations>(context, ChatbotLocalizations);
   }
 
-  static const LocalizationsDelegate<EventLocalizations> delegate = _EventLocalizationsDelegate();
+  static const LocalizationsDelegate<ChatbotLocalizations> delegate = _ChatbotLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -95,75 +95,105 @@ abstract class EventLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @startsInMinutes.
+  /// No description provided for @pageTitle.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Minuten'**
-  String startsInMinutes(int time);
+  /// **'Bereit, ein Event\nzu planen?'**
+  String get pageTitle;
 
-  /// No description provided for @startsInHours.
+  /// No description provided for @pageSubtitle.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Stunden'**
-  String startsInHours(int time);
+  /// **'Von lockeren Treffen bis zu großen Momenten – ich bin für dich da!'**
+  String get pageSubtitle;
 
-  /// No description provided for @startsInDays.
+  /// No description provided for @explore.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Tagen'**
-  String startsInDays(int time);
+  /// **'Entdecken'**
+  String get explore;
 
-  /// No description provided for @startsInWeeks.
+  /// No description provided for @exploreCardDescription.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Wochen'**
-  String startsInWeeks(int time);
+  /// **'Finde lokale Events, die zu deinen Vorlieben passen.'**
+  String get exploreCardDescription;
 
-  /// No description provided for @startsInMonths.
+  /// No description provided for @create.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Monaten'**
-  String startsInMonths(int time);
+  /// **'Erstellen'**
+  String get create;
 
-  /// No description provided for @startsInNow.
+  /// No description provided for @createCardDescription.
   ///
   /// In de, this message translates to:
-  /// **'Startet jetzt'**
-  String get startsInNow;
+  /// **'Plane personalisierte Events basierend auf deinen Interessen.'**
+  String get createCardDescription;
 
-  /// No description provided for @going.
+  /// No description provided for @exploreEvents.
   ///
   /// In de, this message translates to:
-  /// **'Gehen'**
-  String get going;
+  /// **'Veranstaltungen entdecken'**
+  String get exploreEvents;
+
+  /// No description provided for @typeSomethingLike.
+  ///
+  /// In de, this message translates to:
+  /// **'Tippe etwas wie:'**
+  String get typeSomethingLike;
+
+  /// No description provided for @prompt1.
+  ///
+  /// In de, this message translates to:
+  /// **'Zeig mir kommende Events, an denen meine Kollegen aus der Abteilung teilnehmen 💼'**
+  String get prompt1;
+
+  /// No description provided for @prompt2.
+  ///
+  /// In de, this message translates to:
+  /// **'Was sind die beliebtesten Events, die diesen Monat stattfinden 📅'**
+  String get prompt2;
+
+  /// No description provided for @prompt3.
+  ///
+  /// In de, this message translates to:
+  /// **'Finde Events, die zu meinen Interessen passen 🎉'**
+  String get prompt3;
+
+  /// No description provided for @askMeAnything.
+  ///
+  /// In de, this message translates to:
+  /// **'Frag mich alles...'**
+  String get askMeAnything;
 }
 
-class _EventLocalizationsDelegate extends LocalizationsDelegate<EventLocalizations> {
-  const _EventLocalizationsDelegate();
+class _ChatbotLocalizationsDelegate extends LocalizationsDelegate<ChatbotLocalizations> {
+  const _ChatbotLocalizationsDelegate();
 
   @override
-  Future<EventLocalizations> load(Locale locale) {
-    return SynchronousFuture<EventLocalizations>(lookupEventLocalizations(locale));
+  Future<ChatbotLocalizations> load(Locale locale) {
+    return SynchronousFuture<ChatbotLocalizations>(lookupChatbotLocalizations(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['de', 'en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_EventLocalizationsDelegate old) => false;
+  bool shouldReload(_ChatbotLocalizationsDelegate old) => false;
 }
 
-EventLocalizations lookupEventLocalizations(Locale locale) {
+ChatbotLocalizations lookupChatbotLocalizations(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'de': return EventLocalizationsDe();
-    case 'en': return EventLocalizationsEn();
+    case 'de': return ChatbotLocalizationsDe();
+    case 'en': return ChatbotLocalizationsEn();
   }
 
   throw FlutterError(
-    'EventLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'ChatbotLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'

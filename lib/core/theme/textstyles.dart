@@ -14,26 +14,26 @@ class TextStylesNotifier extends _$TextStylesNotifier {
     final brightness = ref.watch(brightnessNotifierProvider);
     final colors = ref.watch(colorsProvider(brightness));
 
-    final baseStyle = TextStyle(color: colors.text, decoration: TextDecoration.none, fontFamily: 'Lato');
+    final baseStyle = TextStyle(color: colors.text, decoration: TextDecoration.none, fontFamily: 'Inter');
 
     return TextStylesTheme(
-      headline: baseStyle.copyWith(fontWeight: FontWeight.w800, fontSize: 28.0),
-      subHeadline: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 20.0),
-      title: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 18.0),
-      subtitle: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 18.0),
-      cardText: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 12.0),
-      cardDescription: baseStyle.copyWith(fontWeight: FontWeight.w300, fontSize: 13.0, height: 1.2),
-      textField: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 16.0),
-      emoji: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 24.0),
+      headline: baseStyle.copyWith(fontWeight: FontWeight.w800, fontSize: 28),
+      subHeadline: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 20),
+      title: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 18),
+      subtitle: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 18),
+      cardText: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 14),
+      cardDescription: baseStyle.copyWith(fontWeight: FontWeight.w300, fontSize: 12, height: 1.2),
+      textField: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 16),
+      emoji: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 24),
       buttonText: baseStyle.copyWith(
         fontWeight: FontWeight.w500,
-        fontSize: 20.0,
+        fontSize: 20,
         letterSpacing: 0.2,
         color: colors.background,
       ),
-      hint: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 16.0, color: colors.dark),
-      small: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 8.0, color: colors.dark),
-      snackbar: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 16.0, letterSpacing: 0.2, height: 1.2),
+      hint: baseStyle.copyWith(fontWeight: FontWeight.w400, fontSize: 16, color: colors.dark),
+      small: baseStyle.copyWith(fontWeight: FontWeight.w700, fontSize: 8, color: colors.dark),
+      snackbar: baseStyle.copyWith(fontWeight: FontWeight.w500, fontSize: 16, letterSpacing: 0.2, height: 1.2),
     );
   }
 }

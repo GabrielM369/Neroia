@@ -35,4 +35,7 @@ class EventLocalizationsDe extends EventLocalizations {
 
   @override
   String get startsInNow => 'Startet jetzt';
+
+  @override
+  String get going => 'Gehen';
 }

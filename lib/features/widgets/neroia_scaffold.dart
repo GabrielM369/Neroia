@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'neroia_background_gradient.dart';
 
+// TODO: Remove this class
 class NeroiaScaffold extends ConsumerWidget {
   final Widget body;
 
