@@ -40,5 +40,6 @@
       }
     }
   },
-  "startsInNow": "Starts now"
+  "startsInNow": "Starts now",
+  "going": "Going"
 }

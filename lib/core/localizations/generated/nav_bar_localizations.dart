@@ -5,24 +5,24 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'event_localizations_de.dart';
-import 'event_localizations_en.dart';
+import 'nav_bar_localizations_de.dart';
+import 'nav_bar_localizations_en.dart';
 
 // ignore_for_file: type=lint
 
-/// Callers can lookup localized strings with an instance of EventLocalizations
-/// returned by `EventLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of NavBarLocalizations
+/// returned by `NavBarLocalizations.of(context)`.
 ///
-/// Applications need to include `EventLocalizations.delegate()` in their app's
+/// Applications need to include `NavBarLocalizations.delegate()` in their app's
 /// `localizationDelegates` list, and the locales they support in the app's
 /// `supportedLocales` list. For example:
 ///
 /// ```dart
-/// import 'generated/event_localizations.dart';
+/// import 'generated/nav_bar_localizations.dart';
 ///
 /// return MaterialApp(
-///   localizationsDelegates: EventLocalizations.localizationsDelegates,
-///   supportedLocales: EventLocalizations.supportedLocales,
+///   localizationsDelegates: NavBarLocalizations.localizationsDelegates,
+///   supportedLocales: NavBarLocalizations.supportedLocales,
 ///   home: MyApplicationHome(),
 /// );
 /// ```
@@ -59,18 +59,18 @@ import 'event_localizations_en.dart';
 /// Select and expand the newly-created Localizations item then, for each
 /// locale your application supports, add a new item and select the locale
 /// you wish to add from the pop-up menu in the Value field. This list should
-/// be consistent with the languages listed in the EventLocalizations.supportedLocales
+/// be consistent with the languages listed in the NavBarLocalizations.supportedLocales
 /// property.
-abstract class EventLocalizations {
-  EventLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+abstract class NavBarLocalizations {
+  NavBarLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
-  static EventLocalizations? of(BuildContext context) {
-    return Localizations.of<EventLocalizations>(context, EventLocalizations);
+  static NavBarLocalizations? of(BuildContext context) {
+    return Localizations.of<NavBarLocalizations>(context, NavBarLocalizations);
   }
 
-  static const LocalizationsDelegate<EventLocalizations> delegate = _EventLocalizationsDelegate();
+  static const LocalizationsDelegate<NavBarLocalizations> delegate = _NavBarLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -95,75 +95,57 @@ abstract class EventLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @startsInMinutes.
+  /// No description provided for @home.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Minuten'**
-  String startsInMinutes(int time);
+  /// **'Start'**
+  String get home;
 
-  /// No description provided for @startsInHours.
+  /// No description provided for @messages.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Stunden'**
-  String startsInHours(int time);
+  /// **'Chat'**
+  String get messages;
 
-  /// No description provided for @startsInDays.
+  /// No description provided for @saved.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Tagen'**
-  String startsInDays(int time);
+  /// **'Favoriten'**
+  String get saved;
 
-  /// No description provided for @startsInWeeks.
+  /// No description provided for @aiAssistant.
   ///
   /// In de, this message translates to:
-  /// **'Startet in {time} Wochen'**
-  String startsInWeeks(int time);
-
-  /// No description provided for @startsInMonths.
-  ///
-  /// In de, this message translates to:
-  /// **'Startet in {time} Monaten'**
-  String startsInMonths(int time);
-
-  /// No description provided for @startsInNow.
-  ///
-  /// In de, this message translates to:
-  /// **'Startet jetzt'**
-  String get startsInNow;
-
-  /// No description provided for @going.
-  ///
-  /// In de, this message translates to:
-  /// **'Gehen'**
-  String get going;
+  /// **'KI'**
+  String get aiAssistant;
 }
 
-class _EventLocalizationsDelegate extends LocalizationsDelegate<EventLocalizations> {
-  const _EventLocalizationsDelegate();
+class _NavBarLocalizationsDelegate extends LocalizationsDelegate<NavBarLocalizations> {
+  const _NavBarLocalizationsDelegate();
 
   @override
-  Future<EventLocalizations> load(Locale locale) {
-    return SynchronousFuture<EventLocalizations>(lookupEventLocalizations(locale));
+  Future<NavBarLocalizations> load(Locale locale) {
+    return SynchronousFuture<NavBarLocalizations>(lookupNavBarLocalizations(locale));
   }
 
   @override
   bool isSupported(Locale locale) => <String>['de', 'en'].contains(locale.languageCode);
 
   @override
-  bool shouldReload(_EventLocalizationsDelegate old) => false;
+  bool shouldReload(_NavBarLocalizationsDelegate old) => false;
 }
 
-EventLocalizations lookupEventLocalizations(Locale locale) {
+NavBarLocalizations lookupNavBarLocalizations(Locale locale) {
 
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'de': return EventLocalizationsDe();
-    case 'en': return EventLocalizationsEn();
+    case 'de': return NavBarLocalizationsDe();
+    case 'en': return NavBarLocalizationsEn();
   }
 
   throw FlutterError(
-    'EventLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+    'NavBarLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
     'an issue with the localizations generation tool. Please file an issue '
     'on GitHub with a reproducible sample app and the gen-l10n configuration '
     'that was used.'
