@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Change to the project root directory (one level up from this script's location)
-cd "$(dirname "$0")/.."
-
 # Set the base l10n directory
 BASE_DIR="./lib/core/localizations/l10n"
 GENERATED_DIR="./lib/core/localizations/generated"

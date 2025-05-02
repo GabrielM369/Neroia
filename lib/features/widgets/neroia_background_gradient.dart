@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/core/theme/colors.dart';
 
-// TODO: Remove this file
 class NeroiaBackgroundGradient extends ConsumerWidget {
   final Widget child;
   const NeroiaBackgroundGradient({super.key, required this.child});

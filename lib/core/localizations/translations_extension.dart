@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:neroia_app/core/localizations/generated/ai_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/auth_localizations.dart';
-import 'package:neroia_app/core/localizations/generated/chatbot_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/error_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/event_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/force_update_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/form_localizations.dart';
-import 'package:neroia_app/core/localizations/generated/nav_bar_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/process_localizations.dart';
 import 'package:neroia_app/core/localizations/generated/settings_localizations.dart';
 
@@ -27,8 +25,6 @@ class I18n {
   FormLocalizations get form => FormLocalizations.of(context)!;
   AiLocalizations get ai => AiLocalizations.of(context)!;
   EventLocalizations get event => EventLocalizations.of(context)!;
-  NavBarLocalizations get navBar => NavBarLocalizations.of(context)!;
-  ChatbotLocalizations get chatbot => ChatbotLocalizations.of(context)!;
 }
 
 const defaultLocale = Locale('en');
@@ -43,8 +39,6 @@ const localizationsDelegates = [
   FormLocalizations.delegate,
   AiLocalizations.delegate,
   EventLocalizations.delegate,
-  NavBarLocalizations.delegate,
-  ChatbotLocalizations.delegate,
 ];
 
 extension LocaleTranslation on Locale {

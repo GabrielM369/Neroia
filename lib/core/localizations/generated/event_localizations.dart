@@ -130,12 +130,6 @@ abstract class EventLocalizations {
   /// In de, this message translates to:
   /// **'Startet jetzt'**
   String get startsInNow;
-
-  /// No description provided for @going.
-  ///
-  /// In de, this message translates to:
-  /// **'Gehen'**
-  String get going;
 }
 
 class _EventLocalizationsDelegate extends LocalizationsDelegate<EventLocalizations> {
