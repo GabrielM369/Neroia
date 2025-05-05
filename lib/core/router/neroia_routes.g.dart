@@ -14,6 +14,7 @@ List<RouteBase> get $appRoutes => [
   $signUpRoute,
   $myShellRouteData,
   $profileRoute,
+  $exploreEventsRoute,
 ];
 
 RouteBase get $splashRoute => GoRouteData.$route(
@@ -190,6 +191,18 @@ RouteBase get $myShellRouteData => StatefulShellRouteData.$route(
         ),
       ],
     ),
+    StatefulShellBranchData.$branch(
+      observers: ChatbotBranch.$observers,
+
+      routes: [
+        GoRouteData.$route(
+          path: '/chatbot',
+          name: 'Chatbot Page',
+
+          factory: $ChatbotRouteExtension._fromState,
+        ),
+      ],
+    ),
   ],
 );
 
@@ -243,6 +256,21 @@ extension $LikedEventsRouteExtension on LikedEventsRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+extension $ChatbotRouteExtension on ChatbotRoute {
+  static ChatbotRoute _fromState(GoRouterState state) => ChatbotRoute();
+
+  String get location => GoRouteData.$location('/chatbot');
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
 RouteBase get $profileRoute => GoRouteData.$route(
   path: '/profile',
   name: 'Profile Page',
@@ -254,6 +282,29 @@ extension $ProfileRouteExtension on ProfileRoute {
   static ProfileRoute _fromState(GoRouterState state) => const ProfileRoute();
 
   String get location => GoRouteData.$location('/profile');
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $exploreEventsRoute => GoRouteData.$route(
+  path: '/explore-events',
+  name: 'Explore Events Page',
+
+  factory: $ExploreEventsRouteExtension._fromState,
+);
+
+extension $ExploreEventsRouteExtension on ExploreEventsRoute {
+  static ExploreEventsRoute _fromState(GoRouterState state) =>
+      const ExploreEventsRoute();
+
+  String get location => GoRouteData.$location('/explore-events');
 
   void go(BuildContext context) => context.go(location);
 

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:neroia_app/core/router/tab_bar/custom_tab_bar.dart';
+import 'package:neroia_app/core/router/nav_bar/custom_nav_bar.dart';
+import 'package:neroia_app/presentation/pages/chatbot_page.dart';
 import 'package:neroia_app/presentation/pages/confirm_email_page.dart';
 import 'package:neroia_app/presentation/pages/error_page.dart';
 import 'package:neroia_app/presentation/pages/events_page.dart';
+import 'package:neroia_app/presentation/pages/explore_events_page.dart';
 import 'package:neroia_app/presentation/pages/liked_events_page.dart';
 import 'package:neroia_app/presentation/pages/login_page.dart';
 import 'package:neroia_app/presentation/pages/profile_page.dart';
@@ -25,7 +27,7 @@ class SplashRoute extends GoRouteData {
   static const String name = 'Splash Screen';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: SplashScreen());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: SplashScreen());
 }
 
 @TypedGoRoute<ErrorRoute>(name: ErrorRoute.name, path: '/error')
@@ -48,7 +50,7 @@ class ConfirmEmailRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      MaterialPage(name: name, child: ConfirmEmailPage());
+      const MaterialPage(name: name, child: ConfirmEmailPage());
 }
 
 @TypedGoRoute<LogInRoute>(name: LogInRoute.name, path: '/login')
@@ -92,6 +94,11 @@ class SignUpRoute extends GoRouteData {
         TypedGoRoute<LikedEventsRoute>(name: LikedEventsRoute.name, path: '/liked-events'),
       ],
     ),
+    TypedStatefulShellBranch<ChatbotBranch>(
+      routes: <TypedRoute<RouteData>>[
+        TypedGoRoute<ChatbotRoute>(name: ChatbotRoute.name, path: '/chatbot'),
+      ],
+    ),
   ],
 )
 class MyShellRouteData extends StatefulShellRouteData {
@@ -108,7 +115,7 @@ class MyShellRouteData extends StatefulShellRouteData {
     BuildContext context,
     StatefulNavigationShell navigationShell,
     List<Widget> children,
-  ) => CustomTabBar(navigationShell: navigationShell, children: children);
+  ) => CustomNavBar(navigationShell: navigationShell, children: children);
 }
 
 class EventsBranch extends StatefulShellBranchData {
@@ -123,7 +130,7 @@ class EventsRoute extends GoRouteData {
   static const String name = 'Events Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: EventsPage());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: EventsPage());
 }
 
 class AttendingEventsBranch extends StatefulShellBranchData {
@@ -138,7 +145,7 @@ class YourEventsRoute extends GoRouteData {
   static const String name = 'Your Events Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: YourEventsPage());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: YourEventsPage());
 }
 
 class LikedEventsBranch extends StatefulShellBranchData {
@@ -153,7 +160,22 @@ class LikedEventsRoute extends GoRouteData {
   static const String name = 'Liked Events Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: LikedEventsPage());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: LikedEventsPage());
+}
+
+class ChatbotBranch extends StatefulShellBranchData {
+  const ChatbotBranch();
+
+  static final List<NavigatorObserver> $observers = routeObservers;
+}
+
+class ChatbotRoute extends GoRouteData {
+  ChatbotRoute();
+
+  static const String name = 'Chatbot Page';
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: ChatbotPage());
 }
 
 @TypedGoRoute<ProfileRoute>(name: ProfileRoute.name, path: '/profile')
@@ -163,5 +185,15 @@ class ProfileRoute extends GoRouteData {
   static const String name = 'Profile Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: ProfilePage());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: ProfilePage());
+}
+
+@TypedGoRoute<ExploreEventsRoute>(name: ExploreEventsRoute.name, path: '/explore-events')
+class ExploreEventsRoute extends GoRouteData {
+  const ExploreEventsRoute();
+
+  static const String name = 'Explore Events Page';
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: ExploreEventsPage());
 }
