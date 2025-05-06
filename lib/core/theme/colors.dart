@@ -10,7 +10,7 @@ part 'colors.g.dart';
 const blueGrey = Color(0xFF444444);
 const lightGrey = Color(0xFFDADCDE);
 const white = Color(0xFFFFFFFF);
-const primary = Color(0xFFAD55FF);
+const primary = Color(0xFF7D76FF);
 const secondary = Color(0xFF5194FF);
 
 final colorsProvider = Provider.family<ColorsTheme, Brightness>(

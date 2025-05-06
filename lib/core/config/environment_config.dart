@@ -64,7 +64,7 @@ final String userCentricsId = _Env.userCentricsId;
 final String firebaseApiKeyIos = _Env.firebaseApiKeyIos;
 final String firebaseApiKeyAndroid = _Env.firebaseApiKeyAndroid;
 
-@Envied(name: 'Envied')
+@Envied(name: 'Envied', path: '.env')
 abstract class _Env {
   @EnviedField(varName: 'SENTRY_DSN', obfuscate: true)
   static String sentryDsn = _Envied.sentryDsn;

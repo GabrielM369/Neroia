@@ -1,0 +1,15 @@
+{
+  "@@locale" : "en",
+  "pageTitle": "Ready to Plan\nan Event?",
+  "pageSubtitle": "From casual hangouts to big moments, I’ve got you!",
+  "explore": "Explore",
+  "exploreCardDescription": "Discover local events that match your preferences.",
+  "create": "Create",
+  "createCardDescription": "Plan personalized events based on your interests.",
+  "exploreEvents": "Explore Events",
+  "typeSomethingLike": "Type something like:",
+  "prompt1": "Show me upcoming events that my department colleagues are attending 💼",
+  "prompt2": "What are the top trending events happening this month 📅",
+  "prompt3": "Find events related to my interests 🎉",
+  "askMeAnything": "Ask me anything..."
+}
