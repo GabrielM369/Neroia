@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/features/events/presentation/events_list.dart';
 import 'package:neroia_app/features/profile/presentation/profile_picture_button.dart';
 
+// TODO: remove this file
 class EventsPage extends ConsumerWidget {
   const EventsPage({super.key});
 

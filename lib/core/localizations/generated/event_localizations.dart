@@ -136,6 +136,60 @@ abstract class EventLocalizations {
   /// In de, this message translates to:
   /// **'Gehen'**
   String get going;
+
+  /// No description provided for @culture.
+  ///
+  /// In de, this message translates to:
+  /// **'Kultur'**
+  String get culture;
+
+  /// No description provided for @sports.
+  ///
+  /// In de, this message translates to:
+  /// **'Sport'**
+  String get sports;
+
+  /// No description provided for @social.
+  ///
+  /// In de, this message translates to:
+  /// **'Soziales'**
+  String get social;
+
+  /// No description provided for @currentLocation.
+  ///
+  /// In de, this message translates to:
+  /// **'Aktueller Standort'**
+  String get currentLocation;
+
+  /// No description provided for @search.
+  ///
+  /// In de, this message translates to:
+  /// **'Suche'**
+  String get search;
+
+  /// No description provided for @today.
+  ///
+  /// In de, this message translates to:
+  /// **'Heute'**
+  String get today;
+
+  /// No description provided for @tomorrow.
+  ///
+  /// In de, this message translates to:
+  /// **'Morgen'**
+  String get tomorrow;
+
+  /// No description provided for @upcoming.
+  ///
+  /// In de, this message translates to:
+  /// **'Bevorstehend'**
+  String get upcoming;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In de, this message translates to:
+  /// **'Alle anzeigen'**
+  String get seeAll;
 }
 
 class _EventLocalizationsDelegate extends LocalizationsDelegate<EventLocalizations> {

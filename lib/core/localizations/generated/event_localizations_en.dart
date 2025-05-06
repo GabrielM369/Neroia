@@ -38,4 +38,31 @@ class EventLocalizationsEn extends EventLocalizations {
 
   @override
   String get going => 'Going';
+
+  @override
+  String get culture => 'Culture';
+
+  @override
+  String get sports => 'Sports';
+
+  @override
+  String get social => 'Social';
+
+  @override
+  String get currentLocation => 'Current Location';
+
+  @override
+  String get search => 'Search';
+
+  @override
+  String get today => 'Today';
+
+  @override
+  String get tomorrow => 'Tomorrow';
+
+  @override
+  String get upcoming => 'Upcoming';
+
+  @override
+  String get seeAll => 'See All';
 }

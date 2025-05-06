@@ -156,14 +156,14 @@ RouteBase get $myShellRouteData => StatefulShellRouteData.$route(
   factory: $MyShellRouteDataExtension._fromState,
   branches: [
     StatefulShellBranchData.$branch(
-      observers: EventsBranch.$observers,
+      observers: HomeBranch.$observers,
 
       routes: [
         GoRouteData.$route(
-          path: '/events',
-          name: 'Events Page',
+          path: '/home',
+          name: 'Home Page',
 
-          factory: $EventsRouteExtension._fromState,
+          factory: $HomeRouteExtension._fromState,
         ),
       ],
     ),
@@ -211,10 +211,10 @@ extension $MyShellRouteDataExtension on MyShellRouteData {
       const MyShellRouteData();
 }
 
-extension $EventsRouteExtension on EventsRoute {
-  static EventsRoute _fromState(GoRouterState state) => EventsRoute();
+extension $HomeRouteExtension on HomeRoute {
+  static HomeRoute _fromState(GoRouterState state) => HomeRoute();
 
-  String get location => GoRouteData.$location('/events');
+  String get location => GoRouteData.$location('/home');
 
   void go(BuildContext context) => context.go(location);
 

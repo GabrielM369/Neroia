@@ -7,7 +7,7 @@ part of 'textstyles.dart';
 // **************************************************************************
 
 String _$textStylesNotifierHash() =>
-    r'105d471b07e8fd5cf550ab717c10a35d6ef40eb4';
+    r'9276afdcd22b82c3177aaae682a2e1b52c026624';
 
 /// See also [TextStylesNotifier].
 @ProviderFor(TextStylesNotifier)

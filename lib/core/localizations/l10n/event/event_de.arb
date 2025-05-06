@@ -41,5 +41,14 @@
     }
   },
   "startsInNow": "Startet jetzt",
-  "going": "Gehen"
+  "going": "Gehen",
+  "culture": "Kultur",
+  "sports": "Sport",
+  "social": "Soziales",
+  "currentLocation": "Aktueller Standort",
+  "search": "Suche",
+  "today": "Heute",
+  "tomorrow": "Morgen",
+  "upcoming": "Bevorstehend",
+  "seeAll": "Alle anzeigen"
 }

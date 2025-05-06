@@ -41,5 +41,14 @@
     }
   },
   "startsInNow": "Starts now",
-  "going": "Going"
+  "going": "Going",
+  "culture": "Culture",
+  "sports": "Sports",
+  "social": "Social",
+  "currentLocation": "Current Location",
+  "search": "Search",
+  "today": "Today",
+  "tomorrow": "Tomorrow",
+  "upcoming": "Upcoming",
+  "seeAll": "See All"
 }
