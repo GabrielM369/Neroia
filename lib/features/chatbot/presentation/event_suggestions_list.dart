@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neroia_app/features/events/presentation/new_event_card.dart';
+import 'package:neroia_app/features/events/presentation/card/new_event_card.dart';
 
 class EventSuggestionsList extends StatelessWidget {
   const EventSuggestionsList({super.key});

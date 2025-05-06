@@ -41,7 +41,7 @@ class ConfirmEmailPage extends ConsumerWidget {
                 NeroiaButton.primary(
                   expandWidth: true,
                   text: context.i18n.form.next,
-                  onTap: () => EventsRoute().replace(context),
+                  onTap: () => HomeRoute().replace(context),
                 ),
                 NeroiaButton.secondary(expandWidth: true, text: context.i18n.form.back, onTap: () => context.pop()),
               ],

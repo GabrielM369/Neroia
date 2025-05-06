@@ -81,7 +81,7 @@ class _LogInPageState extends ConsumerState<LogInPage> {
 
                                     try {
                                       await ref.read(authProvider.notifier).signIn(email: email, password: password);
-                                      EventsRoute().push(context);
+                                      HomeRoute().push(context);
                                     } on AuthException catch (e) {
                                       showErrorSnackbar(context, message: e.message(error: context.i18n.error));
                                     }

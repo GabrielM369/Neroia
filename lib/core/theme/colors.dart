@@ -7,14 +7,15 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'colors.freezed.dart';
 part 'colors.g.dart';
 
-const blueGrey = Color(0xFF444444);
-const lightGrey = Color(0xFFDADCDE);
-const white = Color(0xFFFFFFFF);
-const primary = Color(0xFF7D76FF);
-const secondary = Color(0xFF5194FF);
+const Color blueGrey = Color(0xFF444444);
+const Color lightGrey = Color(0xFFDADCDE);
+const Color white = Color(0xFFFFFFFF);
+const Color primary = Color(0xFF7D76FF);
+const Color secondary = Color(0xFF5194FF);
+const Color tertiary = Colors.green;
 
-final colorsProvider = Provider.family<ColorsTheme, Brightness>(
-  (ref, brightness) => ColorsTheme(
+final ProviderFamily<ColorsTheme, Brightness> colorsProvider = Provider.family<ColorsTheme, Brightness>(
+  (Ref<ColorsTheme> ref, Brightness brightness) => ColorsTheme(
     brightness: brightness,
     dark: const LightDarkColor(light: blueGrey, dark: blueGrey),
     lightGrey: const LightDarkColor(light: lightGrey, dark: lightGrey),
@@ -24,6 +25,7 @@ final colorsProvider = Provider.family<ColorsTheme, Brightness>(
     primary: const LightDarkColor(light: primary, dark: primary),
     text: const LightDarkColor(light: Colors.black, dark: Colors.black),
     secondary: const LightDarkColor(light: secondary, dark: secondary),
+    tertiary: const LightDarkColor(light: tertiary, dark: tertiary),
     error: const LightDarkColor(light: Color(0xFFB71C1C), dark: Color(0xFFB71C1C)),
     shadow: const LightDarkColor(light: blueGrey, dark: blueGrey),
   ),
@@ -50,6 +52,9 @@ class ColorsTheme extends ChangeNotifier {
   final LightDarkColor _secondary;
   Color get secondary => _secondary.toColor(brightness);
 
+  final LightDarkColor _tertiary;
+  Color get tertiary => _tertiary.toColor(brightness);
+
   final LightDarkColor _background;
   Color get background => _background.toColor(brightness);
 
@@ -71,6 +76,7 @@ class ColorsTheme extends ChangeNotifier {
     required LightDarkColor background,
     required LightDarkColor primary,
     required LightDarkColor secondary,
+    required LightDarkColor tertiary,
     required LightDarkColor error,
     required LightDarkColor shadow,
     required LightDarkColor text,
@@ -80,6 +86,7 @@ class ColorsTheme extends ChangeNotifier {
        _light = light,
        _primary = primary,
        _secondary = secondary,
+       _tertiary = tertiary,
        _error = error,
        _shadow = shadow,
        _text = text,
@@ -88,7 +95,7 @@ class ColorsTheme extends ChangeNotifier {
 
 extension ColorsExtension on WidgetRef {
   ColorsTheme get colors {
-    final brightness = watch(brightnessNotifierProvider);
+    final Brightness brightness = watch(brightnessNotifierProvider);
     return watch(colorsProvider(brightness));
   }
 }

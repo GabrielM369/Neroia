@@ -27,7 +27,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
       AppLogger.log('Main', 'Initialization completed', level: LogLevel.info);
 
       final user = await ref.read(authRepository).user.first;
-      user != null ? EventsRoute().pushReplacement(context) : SignUpRoute().pushReplacement(context);
+      user != null ? HomeRoute().pushReplacement(context) : SignUpRoute().pushReplacement(context);
     } catch (e, s) {
       AppLogger.log('Main', 'Error during initialization', level: LogLevel.error, error: e, stackTrace: s);
       ErrorRoute(error: e.toString()).pushReplacement(context);

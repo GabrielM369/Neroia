@@ -8,6 +8,7 @@ import 'package:neroia_app/core/theme/textstyles.dart';
 import 'package:neroia_app/features/events/domain/event.dart';
 import 'package:neroia_app/features/widgets/gradient_mask.dart';
 
+// TODO: remove this class/file
 class EventCard extends ConsumerWidget {
   final Event event;
   const EventCard({super.key, required this.event});

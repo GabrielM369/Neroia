@@ -4,8 +4,8 @@ import 'package:neroia_app/core/router/nav_bar/custom_nav_bar.dart';
 import 'package:neroia_app/presentation/pages/chatbot_page.dart';
 import 'package:neroia_app/presentation/pages/confirm_email_page.dart';
 import 'package:neroia_app/presentation/pages/error_page.dart';
-import 'package:neroia_app/presentation/pages/events_page.dart';
 import 'package:neroia_app/presentation/pages/explore_events_page.dart';
+import 'package:neroia_app/presentation/pages/home_page.dart';
 import 'package:neroia_app/presentation/pages/liked_events_page.dart';
 import 'package:neroia_app/presentation/pages/login_page.dart';
 import 'package:neroia_app/presentation/pages/profile_page.dart';
@@ -63,8 +63,7 @@ class LogInRoute extends GoRouteData {
   static const String name = 'Login Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      MaterialPage(name: name, child: LogInPage(email: email, password: password));
+  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: LogInPage(email: email, password: password));
 }
 
 @TypedGoRoute<SignUpRoute>(name: SignUpRoute.name, path: '/signup')
@@ -77,14 +76,13 @@ class SignUpRoute extends GoRouteData {
   static const String name = 'Signup Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      MaterialPage(name: name, child: SignUpPage(email: email, password: password));
+  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: SignUpPage(email: email, password: password));
 }
 
 @TypedStatefulShellRoute<MyShellRouteData>(
   branches: <TypedStatefulShellBranch<StatefulShellBranchData>>[
-    TypedStatefulShellBranch<EventsBranch>(
-      routes: <TypedRoute<RouteData>>[TypedGoRoute<EventsRoute>(name: EventsRoute.name, path: '/events')],
+    TypedStatefulShellBranch<HomeBranch>(
+      routes: <TypedRoute<RouteData>>[TypedGoRoute<HomeRoute>(name: HomeRoute.name, path: '/home')],
     ),
     TypedStatefulShellBranch<AttendingEventsBranch>(
       routes: <TypedRoute<RouteData>>[TypedGoRoute<YourEventsRoute>(name: YourEventsRoute.name, path: '/your-events')],
@@ -118,19 +116,19 @@ class MyShellRouteData extends StatefulShellRouteData {
   ) => CustomNavBar(navigationShell: navigationShell, children: children);
 }
 
-class EventsBranch extends StatefulShellBranchData {
-  const EventsBranch();
+class HomeBranch extends StatefulShellBranchData {
+  const HomeBranch();
 
   static final List<NavigatorObserver> $observers = routeObservers;
 }
 
-class EventsRoute extends GoRouteData {
-  EventsRoute();
+class HomeRoute extends GoRouteData {
+  HomeRoute();
 
-  static const String name = 'Events Page';
+  static const String name = 'Home Page';
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: EventsPage());
+  Page<void> buildPage(BuildContext context, GoRouterState state) => MaterialPage(name: name, child: HomePage());
 }
 
 class AttendingEventsBranch extends StatefulShellBranchData {

@@ -7,14 +7,20 @@ import 'package:neroia_app/core/theme/textstyles.dart';
 class EventCardImageSection extends ConsumerWidget {
   final String imageUrl;
   final String eventDate;
+  final bool isAttending;
 
-  const EventCardImageSection({required this.imageUrl, required this.eventDate});
+  const EventCardImageSection({
+    required this.imageUrl,
+    required this.eventDate,
+    this.isAttending = false,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Expanded(
       child: Stack(
-        children: [
+        children: <Widget>[
           ClipRRect(
             borderRadius: const BorderRadius.all(Radius.circular(12)),
             child: Image.asset(
@@ -24,18 +30,27 @@ class EventCardImageSection extends ConsumerWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: <Widget>[
                 _buildDateBadge(ref),
                 const Spacer(),
                 Column(
                   mainAxisSize: MainAxisSize.min,
-                  children: [
-                    _buildIconBadge(ref, icon: HugeIcons.strokeRoundedFavourite),
+                  children: <Widget>[
+                    _buildIconBadge(
+                      ref,
+                      icon: HugeIcons.strokeRoundedFavourite,
+                    ),
                     const Spacer(),
-                    //_buildIconBadge(ref, icon: HugeIcons.strokeRoundedBubbleChat),
+                    Visibility(
+                      visible: isAttending,
+                      child: _buildIconBadge(
+                        ref,
+                        icon: HugeIcons.strokeRoundedBubbleChat,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -47,7 +62,7 @@ class EventCardImageSection extends ConsumerWidget {
   }
 
   Widget _buildDateBadge(WidgetRef ref) {
-    final parts = eventDate.split('\n');
+    final List<String> parts = eventDate.split('\n');
     return Container(
       width: 46,
       height: 46,
@@ -58,7 +73,7 @@ class EventCardImageSection extends ConsumerWidget {
       alignment: Alignment.center,
       child: Text.rich(
         TextSpan(
-          children: [
+          children: <InlineSpan>[
             TextSpan(
               text: parts.first,
               style: ref.textStyle.cardDescription.copyWith(

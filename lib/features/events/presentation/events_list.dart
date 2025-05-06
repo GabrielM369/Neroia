@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/core/theme/textstyles.dart';
-import 'package:neroia_app/features/events/presentation/event_card.dart';
+import 'package:neroia_app/features/events/presentation/card/event_card.dart';
 import 'package:neroia_app/features/events/presentation/events_list_notifier.dart';
 
 class EventsList extends ConsumerWidget {
