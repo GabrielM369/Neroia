@@ -51,11 +51,12 @@ final Provider<ThemeData> lightThemeProvider = Provider<ThemeData>((Ref<ThemeDat
       insetPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
     ),
     appBarTheme: AppBarTheme(
+      scrolledUnderElevation: 0,
       color: colors.background,
       titleTextStyle: textStyle.title,
     ),
     cardTheme: CardTheme(
-      color: colors.lightGrey,
+      color: colors.background,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 0,
     ),
@@ -151,11 +152,12 @@ final Provider<ThemeData> darkThemeProvider = Provider<ThemeData>((Ref<ThemeData
       insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
     ),
     appBarTheme: AppBarTheme(
-        color: colors.background,
-        titleTextStyle: textStyle.title,
+      scrolledUnderElevation: 0,
+      color: colors.background,
+      titleTextStyle: textStyle.title,
     ),
     cardTheme: CardTheme(
-      color: colors.lightGrey,
+      color: colors.background,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 0,
     ),

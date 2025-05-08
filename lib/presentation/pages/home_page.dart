@@ -5,7 +5,6 @@ import 'package:neroia_app/features/events/presentation/events_section.dart';
 import 'package:neroia_app/features/events/presentation/header_section.dart';
 import 'package:neroia_app/features/events/presentation/search_text_field.dart';
 
-
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 

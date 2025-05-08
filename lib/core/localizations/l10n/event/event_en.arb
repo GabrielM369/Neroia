@@ -50,5 +50,6 @@
   "today": "Today",
   "tomorrow": "Tomorrow",
   "upcoming": "Upcoming",
-  "seeAll": "See All"
+  "seeAll": "See All",
+  "events": "Events"
 }

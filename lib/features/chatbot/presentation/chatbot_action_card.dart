@@ -35,7 +35,6 @@ class ChatbotActionCard extends ConsumerWidget {
                   ),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                color: ref.colors.background,
                 child: Padding(
                   padding: const EdgeInsets.all(12),
                   child: SizedBox(
