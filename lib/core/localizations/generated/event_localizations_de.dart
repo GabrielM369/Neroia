@@ -65,4 +65,7 @@ class EventLocalizationsDe extends EventLocalizations {
 
   @override
   String get seeAll => 'Alle anzeigen';
+
+  @override
+  String get events => 'Veranstaltungen';
 }

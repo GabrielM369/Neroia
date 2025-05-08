@@ -15,6 +15,7 @@ List<RouteBase> get $appRoutes => [
   $myShellRouteData,
   $profileRoute,
   $exploreEventsRoute,
+  $seeAllEventsRoute,
 ];
 
 RouteBase get $splashRoute => GoRouteData.$route(
@@ -305,6 +306,29 @@ extension $ExploreEventsRouteExtension on ExploreEventsRoute {
       const ExploreEventsRoute();
 
   String get location => GoRouteData.$location('/explore-events');
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $seeAllEventsRoute => GoRouteData.$route(
+  path: '/see-all-events',
+  name: 'See All Events Page',
+
+  factory: $SeeAllEventsRouteExtension._fromState,
+);
+
+extension $SeeAllEventsRouteExtension on SeeAllEventsRoute {
+  static SeeAllEventsRoute _fromState(GoRouterState state) =>
+      const SeeAllEventsRoute();
+
+  String get location => GoRouteData.$location('/see-all-events');
 
   void go(BuildContext context) => context.go(location);
 

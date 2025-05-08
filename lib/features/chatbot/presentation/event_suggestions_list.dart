@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:neroia_app/features/events/presentation/card/new_event_card.dart';
+import 'package:neroia_app/features/events/presentation/card/home_event_card.dart';
 
 class EventSuggestionsList extends StatelessWidget {
   const EventSuggestionsList({super.key});
@@ -24,7 +24,7 @@ class EventSuggestionsList extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 5.0),
               child: SizedBox(
                 width: screenWidth * 0.7,
-                child: const EventCard(
+                child: const HomeEventCard(
                   imageUrl: 'assets/icon.jpg',
                   eventName: 'Flutter Dev Meetup',
                   location: 'San Francisco, CA',

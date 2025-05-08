@@ -190,6 +190,12 @@ abstract class EventLocalizations {
   /// In de, this message translates to:
   /// **'Alle anzeigen'**
   String get seeAll;
+
+  /// No description provided for @events.
+  ///
+  /// In de, this message translates to:
+  /// **'Veranstaltungen'**
+  String get events;
 }
 
 class _EventLocalizationsDelegate extends LocalizationsDelegate<EventLocalizations> {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/core/localizations/translations_extension.dart';
+import 'package:neroia_app/core/router/neroia_routes.dart';
+import 'package:neroia_app/core/theme/colors.dart';
 import 'package:neroia_app/core/theme/textstyles.dart';
-import 'package:neroia_app/features/events/presentation/card/new_event_card.dart';
+import 'package:neroia_app/features/events/presentation/card/home_event_card.dart';
 import '../../../presentation/pages/home_page.dart';
 
 class EventsSection extends ConsumerWidget {
@@ -25,8 +27,8 @@ class EventsSection extends ConsumerWidget {
               Text(title, style: ref.textStyle.title),
               const Spacer(),
               TextButton(
-                onPressed: () {},
-                child: Text(context.i18n.event.seeAll, style: ref.textStyle.cardDescription),
+                onPressed: () async => const SeeAllEventsRoute().push(context),
+                child: Text(context.i18n.event.seeAll, style: ref.textStyle.cardDescription.copyWith(fontSize: 14, color: ref.colors.darkGrey)),
               ),
             ],
           ),
@@ -45,7 +47,7 @@ class EventsSection extends ConsumerWidget {
 
               return Padding(
                 padding: EdgeInsets.only(right: index == events.length ? 0 : 10),
-                child: EventCard(
+                child: HomeEventCard(
                   imageUrl: event.imageUrl,
                   eventName: event.title,
                   location: event.location,

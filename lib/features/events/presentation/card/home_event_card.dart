@@ -4,7 +4,7 @@ import 'package:neroia_app/core/theme/colors.dart';
 import 'package:neroia_app/features/events/presentation/card/event_card_details.dart';
 import 'package:neroia_app/features/events/presentation/card/event_card_image_section.dart';
 
-class EventCard extends ConsumerWidget {
+class HomeEventCard extends ConsumerWidget {
   final String imageUrl;
   final String eventName;
   final String location;
@@ -12,7 +12,7 @@ class EventCard extends ConsumerWidget {
   final bool isAttending;
   final List<String> participants;
 
-  const EventCard({
+  const HomeEventCard({
     required this.imageUrl,
     required this.eventName,
     required this.location,
@@ -28,7 +28,6 @@ class EventCard extends ConsumerWidget {
       width: MediaQuery.sizeOf(context).width / 1.4,
       child: Card(
         elevation: 0.5,
-        color: ref.colors.background,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Padding(
           padding: const EdgeInsets.all(8),

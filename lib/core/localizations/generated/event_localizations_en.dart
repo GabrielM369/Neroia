@@ -65,4 +65,7 @@ class EventLocalizationsEn extends EventLocalizations {
 
   @override
   String get seeAll => 'See All';
+
+  @override
+  String get events => 'Events';
 }
