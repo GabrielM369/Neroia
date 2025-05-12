@@ -40,13 +40,13 @@ class HeaderSection extends ConsumerWidget {
                     onPressed: () {},
                   ),
                   Positioned(
-                    right: 14,
+                    right: 12,
                     top: 12,
                     child: Container(
-                      width: 8,
-                      height: 8,
+                      width: 11,
+                      height: 11,
                       decoration: BoxDecoration(
-                        color: ref.colors.tertiary,
+                        color: ref.colors.primary,
                         shape: BoxShape.circle,
                       ),
                     ),
