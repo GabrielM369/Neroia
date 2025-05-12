@@ -9,6 +9,7 @@ import 'package:neroia_app/presentation/pages/home_page.dart';
 import 'package:neroia_app/presentation/pages/liked_events_page.dart';
 import 'package:neroia_app/presentation/pages/login_page.dart';
 import 'package:neroia_app/presentation/pages/profile_page.dart';
+import 'package:neroia_app/presentation/pages/search_events_page.dart';
 import 'package:neroia_app/presentation/pages/see_all_events_page.dart';
 import 'package:neroia_app/presentation/pages/signup_page.dart';
 import 'package:neroia_app/presentation/pages/splash_screen.dart';
@@ -205,4 +206,14 @@ class SeeAllEventsRoute extends GoRouteData {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: SeeAllEventsPage());
+}
+
+@TypedGoRoute<SearchEventsRoute>(name: SearchEventsRoute.name, path: '/search-events')
+class SearchEventsRoute extends GoRouteData {
+  const SearchEventsRoute();
+
+  static const String name = 'Search Events Page';
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) => const MaterialPage(name: name, child: SearchEventsPage());
 }

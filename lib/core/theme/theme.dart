@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:neroia_app/core/theme/colors.dart';
@@ -51,9 +52,10 @@ final Provider<ThemeData> lightThemeProvider = Provider<ThemeData>((Ref<ThemeDat
       insetPadding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
     ),
     appBarTheme: AppBarTheme(
+      centerTitle: Platform.isIOS,
       scrolledUnderElevation: 0,
       color: colors.background,
-      titleTextStyle: textStyle.title,
+      titleTextStyle: textStyle.title.copyWith(fontSize: 20),
     ),
     cardTheme: CardTheme(
       color: colors.background,
@@ -152,9 +154,10 @@ final Provider<ThemeData> darkThemeProvider = Provider<ThemeData>((Ref<ThemeData
       insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
     ),
     appBarTheme: AppBarTheme(
+      centerTitle: Platform.isIOS,
       scrolledUnderElevation: 0,
       color: colors.background,
-      titleTextStyle: textStyle.title,
+      titleTextStyle: textStyle.title.copyWith(fontSize: 20),
     ),
     cardTheme: CardTheme(
       color: colors.background,
