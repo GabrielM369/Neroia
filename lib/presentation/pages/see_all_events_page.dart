@@ -13,10 +13,6 @@ class SeeAllEventsPage extends StatelessWidget {
         title: Text(context.i18n.event.events),
         actions: const <Widget>[
           Icon(Icons.search),
-          Padding(
-            padding: EdgeInsets.only(left: 16, right: 8),
-            child: Icon(Icons.more_vert),
-          ),
         ],
       ),
       body: GradientBackground(

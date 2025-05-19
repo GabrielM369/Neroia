@@ -179,6 +179,12 @@ abstract class EventLocalizations {
   /// **'Morgen'**
   String get tomorrow;
 
+  /// No description provided for @thisWeek.
+  ///
+  /// In de, this message translates to:
+  /// **'Diese Woche'**
+  String get thisWeek;
+
   /// No description provided for @upcoming.
   ///
   /// In de, this message translates to:

@@ -61,6 +61,9 @@ class EventLocalizationsEn extends EventLocalizations {
   String get tomorrow => 'Tomorrow';
 
   @override
+  String get thisWeek => 'This Week';
+
+  @override
   String get upcoming => 'Upcoming';
 
   @override
